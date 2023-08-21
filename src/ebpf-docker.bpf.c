@@ -58,7 +58,7 @@ struct
 } map_cgroups SEC(".maps");
 
 SEC("lsm/bprm_check_security")
-int BPF_PROG(my_prog, struct linux_binprm *bprm, int ret)
+int BPF_PROG(process_handler, struct linux_binprm *bprm, int ret)
 {
     if (ret != 0)
     {
@@ -101,7 +101,7 @@ int BPF_PROG(my_prog, struct linux_binprm *bprm, int ret)
 }
 
 SEC("lsm/socket_connect")
-int BPF_PROG(test, struct socket *sock, struct sockaddr *address, int addrlen, int ret)
+int BPF_PROG(network_handler, struct socket *sock, struct sockaddr *address, int addrlen, int ret)
 {
     if (ret != 0)
     {

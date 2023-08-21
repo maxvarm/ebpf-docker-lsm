@@ -180,6 +180,7 @@ int startup(struct ebpf_docker_bpf *skel)
 
 int main(int argc, char **argv)
 {
+    // Enable libbpf debug messages
     libbpf_set_print(libbpf_print_fn);
     bump_memlock_rlimit();
 
