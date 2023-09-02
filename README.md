@@ -25,3 +25,21 @@ git clone --recurse-submodules https://github.com/maxvarm/ebpf-docker-lsm.git
 cd ebpf-docker-lsm && make
 sudo ./ebpf-docker
 ```
+
+## Examples
+1. Run the tool as root
+```bash
+sudo ./ebpf-docker
+```
+2. Check **DEMO_BLOCK_*** macros in ebpf-docker.bpf.c
+3. Run some commands to fit into **DEMO_BLOCK_*** condition
+4. Check the error and appropriate events in ebpf-docker.log
+
+### Block a specific process only for a specific image:
+![image](https://github.com/maxvarm/ebpf-docker-lsm/blob/main/images/1.png?raw=true)
+
+### Block outbound connections to 4444 port from host and containers:
+![image](https://github.com/maxvarm/ebpf-docker-lsm/blob/main/images/2.png?raw=true)
+
+### Check how it appears in logs (ebpf-docker.log):
+![image](https://github.com/maxvarm/ebpf-docker-lsm/blob/main/images/3.png?raw=true)
