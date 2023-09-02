@@ -32,7 +32,7 @@ char LICENSE[] SEC("license") = "GPL";
 
 #define DEMO_BLOCK_NETWORK_2                            \
     if ((event.dport == 4444 || event.dport == 1337) && \
-        event.uid > 1000)                               \
+        event.uid >= 1000)                              \
     {                                                   \
         ret = -1;                                       \
     }
